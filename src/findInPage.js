@@ -97,7 +97,7 @@ class FindInPage extends Find{
     return this[initialized] = true
   }
   isVisible() {
-    parseInt(document.querySelector(".find-box").style.top) > 0
+    return parseInt(document.querySelector(".find-box").style.top) > 0
   }
   openFindWindow () {
     if (this[hasOpened]) {
