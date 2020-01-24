@@ -361,18 +361,18 @@ function focusInput (doBlur = false) {
 
 function wrapInput (inputEle, caseEle, timeout = 50) {
   // inputEle.type = 'password'
-  caseEle.style['visibility'] = 'hidden'
+  // caseEle.style['visibility'] = 'hidden'
 
-  setTimeout(() => {
-    if (inputEle.type !== 'text') {
-      print('[FindInPage] wrapInput timeout..')
-      unwrapInput(inputEle, caseEle)
-    }
-  }, timeout)
+  // setTimeout(() => {
+  //   if (inputEle.type !== 'text') {
+  //     print('[FindInPage] wrapInput timeout..')
+  //     unwrapInput(inputEle, caseEle)
+  //   }
+  // }, timeout)
 }
 function unwrapInput (inputEle, caseEle) {
-  inputEle.type = 'text'
-  caseEle.style['visibility'] = 'visible'
+  // inputEle.type = 'text'
+  // caseEle.style['visibility'] = 'visible'
 }
 
 function onInput () {
@@ -380,16 +380,16 @@ function onInput () {
     if (this[inComposition]) return
     this[action] = 'input'
     let text = this[findInput].value
-    // if (text && text !== this[lastText]) {
-    //   this[lastText] = text
-    //   wrapInput(this[findInput], this[findCase], 100)
-    //   this.startFind(text, true, this[matchCase])
-    // } else if (this[lastText] && text === '') {
-    //   this.stopFind()
-    //   this[findMatches].innerText = '0/0'
-    //   lockNext.call(this)
-    //   focusInput.call(this, true)
-    // }
+    if (text && text !== this[lastText]) {
+      this[lastText] = text
+      wrapInput(this[findInput], this[findCase], 100)
+      this.startFind(text, true, this[matchCase])
+    } else if (this[lastText] && text === '') {
+      this.stopFind()
+      this[findMatches].innerText = '0/0'
+      lockNext.call(this)
+      focusInput.call(this, true)
+    }
   }, 50)
 }
 
