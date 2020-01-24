@@ -250,7 +250,7 @@ function creatEventHandler () {
         res ? '' : onInput.call(this)
       })
   }).bind(this)
-  this[events].push({ ele: this[findInput], name: 'input', fn: this[inputEvent] })
+  this[events].push({ ele: this[findInput], name: 'keyup', fn: this[inputEvent] })
 
   this[compositionstart] = (function () {
     print('compositionstart')
