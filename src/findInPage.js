@@ -99,7 +99,7 @@ class FindInPage extends Find{
   isOpen () {
     return this[hasOpened]
   }
-  isFinding() {
+  isSearching() {
     return this.isFinding()
   }
   openFindWindow () {
