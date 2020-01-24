@@ -99,6 +99,9 @@ class FindInPage extends Find{
   isOpen () {
     return this[hasOpened]
   }
+  isFinding() {
+    return this.isFinding()
+  }
   openFindWindow () {
     if (this[hasOpened]) {
       focusInput.call(this)
