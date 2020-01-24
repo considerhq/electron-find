@@ -96,11 +96,8 @@ class FindInPage extends Find{
     move(this[findBox], (0 - this[findBox].offsetHeight - 10), this.duration)
     return this[initialized] = true
   }
-  isOpen () {
-    return this[hasOpened]
-  }
-  isSearching() {
-    return this.isFinding()
+  isVisible() {
+    parseInt(document.querySelector(".find-box").style.top) > 0
   }
   openFindWindow () {
     if (this[hasOpened]) {
