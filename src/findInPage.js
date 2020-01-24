@@ -392,7 +392,7 @@ function onInput () {
       lockNext.call(this)
       focusInput.call(this, true)
     }
-  }, 50)
+  }, 500)
 }
 
 function onKeydown (e) {
