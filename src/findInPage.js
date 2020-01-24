@@ -356,7 +356,7 @@ function isInputing () {
 
 function focusInput (doBlur = false) {
   setTimeout(() => { 
-    doBlur ? this[findInput].blur() : ''
+  //  doBlur ? this[findInput].blur() : ''
     this[findInput].focus() 
   }, 50)
 }
