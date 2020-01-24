@@ -239,7 +239,7 @@ function creatEventHandler () {
   this[inputBlur] = (function () {
     this[findInput].style.border = `1px solid ${this[config].inputBgColor}`
   }).bind(this)
-  this[events].push({ ele: this[findInput], name: 'blur', fn: this[inputBlur] })
+  // this[events].push({ ele: this[findInput], name: 'blur', fn: this[inputBlur] })
 
   this[inputEvent] = (function () {
     updateCnt.call(this)
@@ -355,10 +355,8 @@ function isInputing () {
 }
 
 function focusInput (doBlur = false) {
-  setTimeout(() => { 
   //  doBlur ? this[findInput].blur() : ''
-    this[findInput].focus() 
-  }, 50)
+  this[findInput].focus() 
 }
 
 function wrapInput (inputEle, caseEle, timeout = 50) {
