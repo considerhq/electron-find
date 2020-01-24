@@ -242,6 +242,7 @@ function creatEventHandler () {
   // this[events].push({ ele: this[findInput], name: 'blur', fn: this[inputBlur] })
 
   this[inputEvent] = (function (event) {
+    console.warn(event, event.keyCode)
     if (event.keyCode !== 13) return
     updateCnt.call(this)
     isInputing.call(this)
